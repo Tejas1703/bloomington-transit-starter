@@ -2,6 +2,8 @@
 
 **Real-time transit tracking app for Bloomington, IN** — built with React Native (Expo) and Express.js.
 
+### 🌐 [Live Web App →  remontada0417-bloomtransit.hf.space](https://remontada0417-bloomtransit.hf.space)
+
 > **📢 Important Note:** This is the **open-source starter version** of BloomTransit. The full production codebase — including our proprietary trip-planning algorithm, push notification engine, and live deployment credentials — is maintained in a **private repository**. We're sharing this starter so that anyone interested in building a transit app can use it as a foundation. See [What's Included](#whats-included) and [What You'll Need to Build](#what-youll-need-to-build) below.
 
 ---
@@ -78,7 +80,32 @@ This public repo gives you the **complete app structure and UI** — everything 
 
 ---
 
-## 🧰 Tech Stack
+## 🌐 Web App
+
+In addition to the Android app, BloomTransit includes a **fully functional web application** — a single-page app (`web/index.html`) that runs in any browser with zero paid APIs.
+
+**Try it live:** [remontada0417-bloomtransit.hf.space](https://remontada0417-bloomtransit.hf.space)
+
+### Web App Features
+- 🗺️ **Live Map** — Dark CARTO tiles, real-time bus markers, clickable stops with live arrivals
+- 🔍 **Trip Planner** — Origin/destination search, direct + transfer route planning
+- 🚌 **Routes** — All 16 BT routes with live bus counts, toggle checkboxes to filter the map
+- 📍 **Map-Based Trip Planning** — Click stops to set origin/destination, see live bus status, auto-fill trip planner
+- ⭐ **Saved Trips** — Persistent via localStorage, with departure times, countdowns, and duplicate detection
+- 📍 **Nearest Stop** — GPS-based nearest stop finder with walking distance
+
+### Web Stack (100% Free)
+| Layer | Technology |
+|-------|------------|
+| Frontend | Single HTML file (vanilla JS, Leaflet.js) |
+| Map Tiles | CARTO dark basemaps (free, no key) |
+| Hosting | HuggingFace Spaces (static, free) |
+| Backend | Render.com free tier (Node.js) |
+| Data | BT public GTFS feeds (S3, free) |
+
+---
+
+## 🧰 Tech Stack (Android App)
 
 | Layer | Technology |
 |-------|-----------|
@@ -173,6 +200,9 @@ bloomington-transit-public/
 │       ├── staticApi.js     # Routes, stops, shapes, schedule endpoints
 │       ├── realtimeApi.js   # Vehicles, arrivals, alerts endpoints
 │       └── nearestApi.js    # Nearest bus/stop endpoint (stub)
+│
+├── web/                     # Web App (fully functional)
+│   └── index.html           # Complete single-page web application
 │
 ├── app/                     # React Native (Expo) frontend
 │   ├── App.js               # App entry point
